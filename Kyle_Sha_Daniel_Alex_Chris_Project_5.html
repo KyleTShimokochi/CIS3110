@@ -2,7 +2,7 @@
 <html>
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<link rel = "stylesheet" type = "text/css" href = "Project4css.css"/>
+	<link rel = "stylesheet" type = "text/css" href = "Project5css.css"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	
 	
@@ -66,10 +66,10 @@
 		for (var i = 0; i < images.length; i++)
 		{
 			console.log("image " + i + " is " + images[i]);
-			url = "https://s3.amazonaws.com/kyleshimokochicis3110deliverable4/" + images[i]; 
+			url = images[i]; 
 			
 			var Captiones = Captions[i]; 
-			var urlOfDetailPage = "KyleDetailPage2.html?" + "img=" + url + "&" + "captions=" + Captions[i] + "&" + "description=" + Description[i]; //Make this into an actual url when uploaded to amazon.
+			var urlOfDetailPage = "Kyle_Sha_Daniel_Alex_Chris_Detail_Page.html?" + "img=" + url + "&" + "captions=" + Captions[i] + "&" + "description=" + Description[i]; //Make this into an actual url when uploaded to amazon.
 
 			var divImage = document.createElement("div");
 			divImage.setAttribute("class", "divCSS");
