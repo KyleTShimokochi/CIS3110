@@ -1,0 +1,154 @@
+<!-- jquery used to set up a button, and establish a page via ready function -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acquire an image, via URL Params, then animate its display</title>
+  <link rel="stylesheet" href="Project3css.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script> 
+
+  $( function() { 
+    
+    $("#u").click(function(){
+        
+        var h = "Kyle_Shimokochi_Project_4.html"; 
+        console.log(h);
+        window.location.href = h;
+    });
+    
+    var url = window.location.href;
+    console.log("url = " + url);
+    var x = breakUpURLParameters(url);
+      console.log(x.search);
+      console.log("img url  = " + x.search.img); 
+	  
+    var t = document.getElementById("effectDiv");
+	
+    var y = document.createElement("img");
+	var h = document.createElement("h1");
+	var p = document.createElement("p");
+	var h2 = document.createElement("h2");
+	var pDiv = document.createElement("div");
+	
+	
+	pDiv.setAttribute("id", "heart");
+    y.setAttribute("src", x.search.img); 
+    y.setAttribute("class", "divCSS"); 
+	
+	var node1 = document.createTextNode(decodeURI(x.search.captions));
+	var node2 = document.createTextNode(decodeURI(x.search.description));
+	var node3 = document.createTextNode("Description:");
+	
+	h.appendChild(node1);
+	p.appendChild(node2);
+	h2.appendChild(node3);
+	
+	pDiv.appendChild(h);
+	t.appendChild(pDiv);
+    t.appendChild(y);
+	t.appendChild(h2);
+	t.appendChild(p);
+	
+	//Cookies
+	
+	if (document.cookie.split(';').filter(function(item){return item.indexOf('imgFile=pic1.jpg') >= 0}).length) //for Cheese
+			{
+			var heart = document.createElement("i");
+			heart.setAttribute("class", "fa fa-heart");
+			heart.setAttribute("style","font-size:30px;color:red;");
+			var heartDiv = document.getElementById("heart");
+			heartDiv.appendChild(heart);
+			}
+			
+	else if (document.cookie.split(';').filter(function(item){return item.indexOf('imgFile=pic2.jpg') >= 0}).length) //for Mushroom
+			{
+			var heart = document.createElement("i");
+			heart.setAttribute("class", "fa fa-heart");
+			heart.setAttribute("style","font-size:30px;color:red;");
+			var heartDiv = document.getElementById("heart");
+			heartDiv.appendChild(heart);
+			}
+
+	else if (document.cookie.split(';').filter(function(item){return item.indexOf('imgFile=pic3.jpg') >= 0}).length) //for Pineapple
+			{
+			var heart = document.createElement("i");
+			heart.setAttribute("class", "fa fa-heart");
+			heart.setAttribute("style","font-size:30px;color:red;");
+			var heartDiv = document.getElementById("heart");
+			heartDiv.appendChild(heart);
+			}
+			
+	else if (document.cookie.split(';').filter(function(item){return item.indexOf('imgFile=pic4.jpg') >= 0}).length) //for sausage
+			{
+			var heart = document.createElement("i");
+			heart.setAttribute("class", "fa fa-heart");
+			heart.setAttribute("style","font-size:30px;color:red;");
+			var heartDiv = document.getElementById("heart");
+			heartDiv.appendChild(heart);
+			}
+	
+	else if (document.cookie.split(';').filter(function(item){return item.indexOf('imgFile=pic5.jpg') >= 0}).length) //for chocolate
+			{
+			var heart = document.createElement("i");
+			heart.setAttribute("class", "fa fa-heart");
+			heart.setAttribute("style","font-size:30px;color:red;");
+			var heartDiv = document.getElementById("heart");
+			heartDiv.appendChild(heart);
+			}
+	
+	
+	//cookies
+
+    function breakUpURLParameters(url) {        
+        var link = document.createElement('a');
+        link.setAttribute('href', url);
+        console.log("path variable is " + url);
+
+       
+        return {
+            host:     link.hostname,  
+            port:     link.port,      
+            search:   mapMaker(link.search), 
+            path:     link.pathname,  
+            protocol: link.protocol   
+        }
+    }
+
+  function mapMaker(search, preserveDuplicates) { 
+      preserveDuplicates = preserveDuplicates || false;  
+
+      var outputNoDupes = {};
+      var returnableArray = [];  
+
+    
+      if(!search) throw new Error('mapMaker: your search input param is misformed?');
+
+      
+      search = search.split('?')[1];
+
+     
+      search = search.split('&');
+
+     
+      returnableArray = search.map(function(keyval){
+                                   var out = {};
+                                   keyval = keyval.split('=');
+                                   out[keyval[0]] = keyval[1];
+                                   outputNoDupes[keyval[0]] = keyval[1]; 
+                                   return out;
+                                   });
+                                   return (preserveDuplicates) ? returnableArray : outputNoDupes;
+  }
+});
+</script>
+</head>
+<body>
+  <div id="effectDiv" class="imgCSS">
+    <button id="u">back</button>
+  </div>
+
+</body>
+</html>
