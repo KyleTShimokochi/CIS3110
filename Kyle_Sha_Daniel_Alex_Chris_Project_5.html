@@ -17,15 +17,20 @@
 	<body>
 	<h1> Kyle Shimokochi CIS 3110 Project 4 </h1> </br>
 	
-	<div id = "theDropDownButtonDiv">
-			<button onclick = "dropFunction()" id = "button"> Dropdown </button>
-				<div id = "theDropDownDiv">
-					<a href="https://s3-us-west-2.amazonaws.com/daniellew3110phase4/DanielLewPhase4.html">Daniel</a>
-					<a href="https://s3-us-west-2.amazonaws.com/cis311phase3/assignment3.html">Sha</a>
-					<a href="https://s3-us-west-2.amazonaws.com/cis3110phase4/CIS3110Phase4AssignmentHomePage.html">Alex</a>
-					<a href="https://s3-us-west-2.amazonaws.com/cmleongcis311/phase+4/phase4.html">Chris</a>
-				</div>
+	<center>
+		<div class="container">
+			<div class="dropdown text-center">
+				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Teammate's URLs
+				<span class="caret"></span></button>
+					<ul class="dropdown-menu dropdown-menu-center">
+					  <li><a href="https://s3-us-west-2.amazonaws.com/cis3110phase4/CIS3110Phase4AssignmentHomePage.html">Alex</a></li>
+					  <li><a href="https://s3-us-west-2.amazonaws.com/daniellew3110phase4/DanielLewPhase4.html">Daniel</a></li>
+					  <li><a href="https://s3.amazonaws.com/kyleshimokochicis3110deliverable4/Kyle_Shimokochi_Project_4.html">Kyle</a></li>
+					  <li><a href="https://www.instagram.com">Sha</a></li>
+					</ul>
+			</div>
 		</div>
+	</center>
 	
 	<h2> Types of Pizza: </h2>
 	<div id = "title">
@@ -206,7 +211,7 @@
 			favButton = document.createElement("button");
 			favButton.setAttribute("id", "favButton" + idNum[i]);
 			favButton.setAttribute("type", "button");
-			favButton.setAttribute("class", "btn btn-secondary");
+			favButton.setAttribute("class", "btn btn-success");
 			favButton.setAttribute("data-toggle", "tooltip");
 			favButton.setAttribute("data-placement", "top");
 			favButton.setAttribute("title", "Click on this to make this picture into your favorite through cookies");
@@ -217,7 +222,7 @@
 			unfavButton = document.createElement("button");
 			unfavButton.setAttribute("id", "unfavButton" + idNum[i]);
 			unfavButton.setAttribute("type", "button");
-			unfavButton.setAttribute("class", "btn btn-secondary");
+			unfavButton.setAttribute("class", "btn btn-danger");
 			unfavButton.setAttribute("data-toggle", "tooltip");
 			unfavButton.setAttribute("data-placement", "bottom");
 			unfavButton.setAttribute("title", "Click on this to clear your cookies and erase your favorite");
