@@ -4,12 +4,14 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel = "stylesheet" type = "text/css" href = "Project5css.css"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	
-	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
 </head>
 	<body>
@@ -26,10 +28,109 @@
 		</div>
 	
 	<h2> Types of Pizza: </h2>
-	
+	<div id = "title">
 	<p> Click on an image to take you to a discription page </p>
+	<ul class="nav">
+		<li class="nav-item">
+			<a class="nav-link" href="https://s3-us-west-2.amazonaws.com/daniellew3110phase4/DetailPagePhase4.html?img=https://s3-us-west-2.amazonaws.com/daniellew3110phase4/Pic6.jpg&captions=Pineapple&description=Thepineapple%20(Ananas%20comosus)%20is%20a%20tropical%20plant%20with%20an%20edible%20multiple%20fruits%20consisting%20of%20coalesced%20berries,%20also%20called%20pineapplesand%20the%20most%20economically%20significant%20plant%20in%20the%20family%20Bromeliaceae">Pineapple</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="https://s3-us-west-2.amazonaws.com/daniellew3110phase4/DetailPagePhase4.html?img=https://s3-us-west-2.amazonaws.com/daniellew3110phase4/Pic5.jpg&captions=Orange&description=The%20orange%20is%20the%20fruit%20of%20the%20citrus%20species%20Citrus%20%C3%97%20sinensis%20inthe%20family%20Rutaceae.[1]%20It%20is%20also%20called%20sweet%20orange,%20to%20distinguish%20it%20from%20the%20related%20Citrus%20%C3%97%20aurantium,%20referred%20to%20as%20bitter%20orange.">Orange</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="https://s3-us-west-2.amazonaws.com/daniellew3110phase4/DetailPagePhase4.html?img=https://s3-us-west-2.amazonaws.com/daniellew3110phase4/Pic4.jpg&captions=Blackberry&description=The%20blackberry%20is%20anedible%20fruit%20produced%20by%20many%20species%20in%20the%20genus%20Rubus%20in%20the%20family%20Rosaceae,%20hybrids%20among%20these%20species%20within%20the%20subgenus%20Rubus,and%20hybrids%20between%20the%20subgenera%20Rubus%20and%20Idaeobatus.">Blackberry</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="https://s3-us-west-2.amazonaws.com/daniellew3110phase4/DetailPagePhase4.html?img=https://s3-us-west-2.amazonaws.com/daniellew3110phase4/Pic3.jpg&captions=Strawberry&description=The%20garden%20strawberry%20(or%20simply%20strawberry;%20Fragaria%20%C3%97%20ananassa)[1]%20is%20a%20widely%20grownhybrid%20species%20of%20the%20genus%20Fragaria,%20collectively%20known%20as%20the%20strawberries.%20It%20is%20cultivated%20worldwide%20for%20its%20fruit.">Strawberry</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="https://s3-us-west-2.amazonaws.com/daniellew3110phase4/DetailPagePhase4.html?img=https://s3-us-west-2.amazonaws.com/daniellew3110phase4/Pic2.jpg&captions=Raspberry&description=The%20raspberry%20is%20the%20edible%20fruit%20of%20a%20multitude%20of%20plant%20species%20in%20the%20genus%20Rubus%20of%20the%20rose%20family,most%20of%20which%20are%20in%20the%20subgenus%20Idaeobatus">Raspberry</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="https://s3-us-west-2.amazonaws.com/daniellew3110phase4/DetailPagePhase4.html?img=https://s3-us-west-2.amazonaws.com/daniellew3110phase4/Pic1.jpg&captions=Apple&description=An%20apple%20is%20a%20sweet,%20edible%20fruit%20produced%20by%20an%20apple%20tree%20(Malus%20pumila).">Apple</a>
+		</li>
+	</ul>
+	</div>
 	
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					...
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	
+	<div id = "m1" class = "hidden">
+		<div class="modalHeader">
+			<h4 class="modal-title" id="exampleModalLabel">On Sale Now!</h4>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class = "modalBody">
+			<p>Please Enter This Code at Checkout for a 10% Discount on your purchase of Apples: Apple10</p>
+		</div>
+	</div>
+	
+	<div id = "m2" class = "hidden">
+		<div class="modalHeader">
+			<h4 class="modal-title" id="exampleModalLabel">Buy One Get One 50% Off!</h4>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class = "modalBody">
+			<p>Buy one Raspberry, get one 50% off! Only Today!</p>
+		</div>
+	</div>
+	
+	<div id = "m3" class = "hidden">
+		<div class="modalHeader">
+			<h4 class="modal-title" id="exampleModalLabel">Limited Quantity!</h4>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class = "modalBody">
+			<p>We are running low on Strawberries, so hurry and get them while supplies last!</p>
+		</div>
+	</div>
+	
+	<div id = "m4" class = "hidden">
+		<div class="modalHeader">
+			<h4 class="modal-title" id="exampleModalLabel">Shopping Bag</h4>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class = "modalBody">
+			<p>Get a free reusable shopping bag if you purchase 10 or more Blackberries! While supplies lasts!</p>
+		</div>
+	</div>
+	
+	<div id = "m5" class = "hidden">
+		<div class="modalHeader">
+			<h4 class="modal-title" id="exampleModalLabel">Fresh Oranges</h4>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class = "modalBody">
+			<p>Fresh Oranges are brought in daily! Pick some up today!</p>
+		</div>
+	</div>
 	
 	<script>
 	$(document).ready( function() { 
@@ -46,12 +147,14 @@
 			"pepperoni. A common type of sausage used on sausage pizza is Italian sausage. In many cases, the sausage is spicy. ", " Chocolate pizza is pizza prepared with Chocolate " +
 			"as the main ingredient. Many types of chocolate pizzas are very sweet, others savory. In addition, chocolate may be baked into the dough of the pizza."];
 		var idNum = ["1", "2", "3", "4", "5"];
-		
+		var priceNum = ["$0.30","$0.67","$0.89","$0.34","$0.12"];
 		
 			
 		var url;
 		var favButton;
 		var unfavButton;
+		var priceButton;
+		var modalButton;
 		
 		var largeDiv = document.createElement("div");
 		largeDiv.setAttribute("class", "containMe");
@@ -70,7 +173,6 @@
 			
 			var Captiones = Captions[i]; 
 			var urlOfDetailPage = "Kyle_Sha_Daniel_Alex_Chris_Detail_Page.html?" + "img=" + url + "&" + "captions=" + Captions[i] + "&" + "description=" + Description[i]; //Make this into an actual url when uploaded to amazon.
-
 			var divImage = document.createElement("div");
 			divImage.setAttribute("class", "divCSS");
 			
@@ -99,7 +201,6 @@
 			uniDiv.setAttribute("class","box");
 			
 			
-			
 			uniDiv.appendChild(divCaption);
 			
 			favButton = document.createElement("button");
@@ -124,6 +225,28 @@
 			var node3 = document.createTextNode(unfav);
 			unfavButton.appendChild(node3);
 			
+			priceButton = document.createElement("button");
+			priceButton.setAttribute("id", "priceButton" + idNum[i]);
+			priceButton.setAttribute("type", "button");
+			priceButton.setAttribute("class", "btn btn-secondary");
+			priceButton.setAttribute("data-container", "body");
+			priceButton.setAttribute("data-toggle", "popover");
+			priceButton.setAttribute("data-placement", "right");
+			priceButton.setAttribute("data-content", priceNum[i]);
+			var price = "Price";
+			var node4 = document.createTextNode(price);
+			priceButton.appendChild(node4);
+			
+			modalButton = document.createElement("button");
+			modalButton.setAttribute("id","modalButton" + idNum[i]);
+			modalButton.setAttribute("type","button");
+			modalButton.setAttribute("class","btn btn-primary");
+			modalButton.setAttribute("data-toggle","modal");
+			modalButton.setAttribute("data-target","#exampleModal");
+			var modal = "Click Me!";
+			var node5 = document.createTextNode(modal);
+			modalButton.appendChild(node5);
+			
 			var favDiv = document.createElement("div");
 			favDiv.setAttribute("id", "favDiv" + idNum[i]);
 			favDiv.appendChild(favButton);
@@ -131,14 +254,19 @@
 			var unfavDiv = document.createElement("div");
 			unfavDiv.appendChild(unfavButton);
 			
+			var priceDiv = document.createElement("div");
+			priceDiv.setAttribute("id", "priceDiv");
+			priceDiv.appendChild(priceButton);
+			
+			var modalDiv = document.createElement("div");
+			modalDiv.setAttribute("id","modalDiv");
+			modalDiv.appendChild(modalButton);
+			
 			uniDiv.appendChild(favDiv);
 			uniDiv.appendChild(unfavDiv);
+			uniDiv.appendChild(priceDiv);
+			uniDiv.appendChild(modalDiv);
 			uniDiv.appendChild(divImage); 
-			
-			
-				
-						
-			
 			
 			largeDiv.appendChild(uniDiv);
 			
@@ -427,6 +555,66 @@
 			   }
 			}
 		}
+		
+		//Popovers
+		$(function () 
+		{
+			$('[data-toggle="popover"]').popover()
+		});
+		
+		//Modals
+		
+		$('#exampleModal').on('shown.bs.modal', function () {
+			$('#myInput').trigger('focus')
+		});
+		
+		//More Modal Functions
+		$(function()
+		{
+			var $header = $("#exampleModal .modal-header"),
+				$body = $("#exampleModal .modal-body"),
+				$footer = $("#exampleModal .modal-footer");
+				
+			$("#modalButton1").click(function()
+			{
+				var headerContent = $("#m1 .modalHeader").html();
+				$header.html(headerContent);
+				var bodyContent = $("#m1 .modalBody").html();
+				$body.html(bodyContent);
+			});
+			
+			$("#modalButton2").click(function()
+			{
+				var headerContent = $("#m2 .modalHeader").html();
+				$header.html(headerContent);
+				var bodyContent = $("#m2 .modalBody").html();
+				$body.html(bodyContent);
+			});
+			
+			$("#modalButton3").click(function()
+			{
+				var headerContent = $("#m3 .modalHeader").html();
+				$header.html(headerContent);
+				var bodyContent = $("#m3 .modalBody").html();
+				$body.html(bodyContent);
+			});
+			
+			$("#modalButton4").click(function()
+			{
+				var headerContent = $("#m4 .modalHeader").html();
+				$header.html(headerContent);
+				var bodyContent = $("#m4 .modalBody").html();
+				$body.html(bodyContent);
+			});
+			
+			$("#modalButton5").click(function()
+			{
+				var headerContent = $("#m5 .modalHeader").html();
+				$header.html(headerContent);
+				var bodyContent = $("#m5 .modalBody").html();
+				$body.html(bodyContent);
+			});
+		});
 		
 		//deletes cookie
 		
