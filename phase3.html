@@ -1,0 +1,585 @@
+<html>
+<title> Sha Maralit's Phase 3</title>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <link rel="stylesheet" type="text/css" href="phase3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<h1> Sha Mie Maralit's Phase 3 Assignment</h1>
+<style>  h1{ text-align: center }  </style>
+    <br>
+<!--- <link rel="stylesheet" type="text/css" href="go.css"> -->
+<style>
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style>
+      
+   <div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+	<a href="https://s3-us-west-2.amazonaws.com/daniellew3110/DanielLewPhase1.html">Daniel</a>
+	<a href="https://s3-us-west-2.amazonaws.com/cmleongcis311/phase+1/visitMe.html" target="_blank">Chris</a> 
+	<a href="https://s3-us-west-2.amazonaws.com/cis3110phase1/CIS+3110+phase+1+assignment.html">Alex</a>
+	<a href="https://s3-us-west-2.amazonaws.com/kyleshimokochicis3110deliverable3/Kyle_Shimokochi_Project_3.html" target="_blank">Kyle</a>
+    
+  </div>
+</div>
+    
+ <h2> Pick Your Favorite Flower</h2>  
+<p> Click a Picture to go to the Descrition Page </p>
+<script>
+$(document).ready( function() { 
+ var images = ["pic1.jpg", "pic2.jpg", "pic3.jpg", "pic4.jpg", "pic5.jpg", "pic6.jpg"]; //your urls
+ var imagesTitle = ["Dahlia", "Shasta Daisies", "Orchids", "Tulips", "Hibiscus", "Cherry Blossoms"];
+ var imagesDescription = ["The Car Federation upsets order in the Galactic Car Republic by blockading the Yes Cerritos Auto Square in preparation" 
+                        + "for a full-scale invasion. The Republic's leader, Supreme Carcellor Valoroom, dispatches Cardi Master Qui-Car Jinn, and his" 
+          			    + "apprentice, Obi-Wan Carobi, to negotiate with the Car Federation Carroy, Nute Carray. Darth Sidious, a Car Lord and the" 
+						+ "Car Federation's secret benefactor, orders the Carroy to kill the Cardi and begin their invasion with an army of battle cars.", 
+                          "Ten years after the Car Federation's invasion of Yes Cerritos Auto Square, the Galactic Car Republic is threatened by the" 
+						+ "Separatist movement organized by former Cardi Master Counting Cars. Senator Padmé Amicarla comes to Caruscant to vote on a motion" 
+						+ "to create a car army to assist the Cardi against this threat. Narrowly avoiding an assassination attempt upon arrival, she is placed"
+						+ "under the protection of Cardi Master Obi-Wan Carobi and his apprentice, Anakin Carwalker.",
+						  "Three years after the Battle of Honda, the industry is in a state of civil war. During a battle over I-15, Cardi master" 
+						+ "Obi-Wan Carobi and Cardi Knight Anakin Carwalker lead a mission to rescue the kidnapped Supreme Carncellor Palpatine from the"
+						+ "cyborg Separatist carmmander, General Grievous. After infiltrating Grievous's car, the Invisible Hand, the Cardi battle Counting Car"
+						+ ", whom Anakin eventually executes at Palpatine's urging.", 
+						  "The industry is in the midst of a civil war. Car spies have stolen plans to the Galactic Car Empire's Death Star, a colossal car factory"
+						+ "capable of destroying an entire car company. Princess Leia, one of the Car's leaders, has the plans, but her car is captured by Imperial cars"
+						+ "under the command of the ruthless Darth Carder. Before she is captured, Leia hides the plans in the memory of an astrocar droid, R2-D2, along"
+						+ "with a holographic recording. R2-D2 flees in an escape car to the desert road Route 66 with C-3PO, a protocar droid.",
+						  "Three years after the destruction of the Death Star, the Car Alliance has been driven from their former base on Carvin IV by the Galactic Car "
+						+ "Empire. The cars, led by Princess Leia, have set up a new base on the ice factory Anartica. The Imperial fleet, led by Darth Carder, continues"
+						+ "to hunt for the Car's new base by dispatching probe cars across the galaxy. Luke Carwalker is captured by a wampa while investigating one such car,"
+						+ " but he manages to escape from the wampa's car with his carsaber. ", 
+						  "Luke Carwalker initiates a plan to rescue Han Carolo from the crime lord Jabba the Car with the help of Princess Leia, Lando Carlrissian, Chewbaccar,"
+						+ " C-3PO, and R2-D2. Leia infiltrates Jabba's monster truck on Route 66, disguised as a car hunter, with Chewbaccar as her prisoner. Leia releases Han"
+						+ " from his carbonite maintenance, but she is captured and enslaved."];
+ var idNum = ["1","2","3","4","5", "6"];
+
+ var url ; //assign later, make scope global to script
+ var favButton;
+ var unfavButton;
+		
+ var largeDiv = document.createElement("div");
+ largeDiv.setAttribute("class", "containMe");
+ document.body.appendChild(largeDiv);
+
+ for(var i=0; i < images.length; i++) //establish for, 6 items, last index place is 5, if you recall
+ {
+   console.log("image" + i + "is " + images[i]);
+   url = "https://s3-us-west-2.amazonaws.com/cis311phase3/phase3.html" + images[i];
+     //append to https://s3-us-west-2.amazonaws.com/cis3110phase2/
+
+   var multImagesDescription = imagesDescription[i];
+   var urlOfDetailPage = "?" + "img=" + url + "&" + "title=" + imagesTitle[i] + "&" + "description=" + imagesDescription[i]; //Make this into an actual url when uploaded to amazon.; //where you will navigate, once you press the image, will send the detail page the img to analyze
+  
+  var imgDiv = document.createElement("div"); //make a div
+   imgDiv.setAttribute("class", "divCSS"); //so it displays at 30% width, margin and padding https://css-tricks.com/almanac/properties/o/object-fit/
+   
+var imgInDiv = document.createElement("img");
+   imgInDiv.setAttribute("class", "imgCSS"); //fit to div
+   imgInDiv.setAttribute("src", url); //src to url, above, determined by for i
+
+   var link = document.createElement("a");
+   link.setAttribute("href", urlOfDetailPage); // so you'll navigate to the url
+   link.appendChild(imgInDiv); //make the image the link
+   imgDiv.appendChild(link);//place the link inside of each div
+   
+   var divDescription = document.createElement("div");
+			divDescription.setAttribute("class", "captionCSS");
+			var captionContent = imagesTitle[i];
+			var node = document.createTextNode(captionContent);
+			
+	var caption = document.createElement("h3");
+			caption.appendChild(node);
+			divDescription.appendChild(caption);
+
+			var uniDiv = document.createElement("div");
+			uniDiv.setAttribute("class","box");
+	
+			uniDiv.appendChild(divDescription);
+			
+			favButton = document.createElement("button");
+			favButton.setAttribute("id", "favButton" + idNum[i]);
+			var fav = "Favorite";
+			var node2 = document.createTextNode(fav);
+			favButton.appendChild(node2);
+			
+			unfavButton = document.createElement("button");
+			unfavButton.setAttribute("id", "unfavButton");
+			unfavButton.setAttribute("id", "unfavButton" + idNum[i]);
+			var unfav = "Unfavorite";
+			var node3 = document.createTextNode(unfav);
+			unfavButton.appendChild(node3);
+			
+			var favDiv = document.createElement("div");
+			favDiv.setAttribute("id", "favDiv" + idNum[i]);
+			favDiv.appendChild(favButton);
+			
+			var unfavDiv = document.createElement("div");
+			unfavDiv.appendChild(unfavButton);
+			
+			uniDiv.appendChild(favDiv);
+			uniDiv.appendChild(unfavDiv);
+			uniDiv.appendChild(imgDiv); 
+			
+			largeDiv.appendChild(uniDiv);
+ }
+
+		$("#favButton1").click(function()//CW1
+		{
+			console.log("CW1.");
+			alert("You have chosen Dahlia as your favorite flower. Please reload the page.");
+			checkCookie1();
+		});
+		
+		$("#unfavButton1").click(function()
+		{
+			console.log("CW1 deleted.");
+			alert("You have unfavorite Dahlia. Please reload the page.");
+			deleteCookie("imgFile");	
+		});	
+		
+		$("#favButton2").click(function()//CW2
+		{
+			console.log("CW2.");
+			alert("You have chosen Shasta Daisies as your favorite flower. Please reload the page.");
+			checkCookie2();
+		});
+		
+		$("#unfavButton2").click(function()
+		{
+			console.log("CW2 deleted.");
+			alert("You have unfavorite Shasta Daisies. Please reload the page.");
+			deleteCookie("imgFile");
+		});
+		
+		$("#favButton3").click(function()//CW3
+		{
+			console.log("CW3.");
+			alert("You have chosen Orchids as your favorite flower. Please reload the page.");
+			checkCookie3();
+		});
+		
+		$("#unfavButton3").click(function()
+		{
+			console.log("CW3 deleted.");
+			alert("You have unfavorite Orchids. Please reload the page.");
+			deleteCookie("imgFile");
+		});
+		
+		$("#favButton4").click(function()//CW4
+		{
+			console.log("CW4.");
+			alert("You have chosen Tulips as your favorite flower. Please reload the page.");
+			checkCookie4();
+		});
+		
+		$("#unfavButton4").click(function()
+		{
+			console.log("CW4 deleted.");
+			alert("You have unfavorite Tulips. Please reload the page.");
+			deleteCookie("imgFile");
+		});
+		
+		$("#favButton5").click(function()//CW5
+		{
+			console.log("CW5.");
+			alert("You have chosen Hibiscus as your favorite. Please reload the page.");
+			checkCookie5();
+		});
+		
+		$("#unfavButton5").click(function()
+		{
+			console.log("CW5 deleted.");
+			alert("You have unfavorite Hibiscus. Please reload the page.");
+			deleteCookie("imgFile");
+		});
+		
+		$("#favButton6").click(function()//CW6
+		{
+			console.log("CW6.");
+			alert("You have chosen Cherry Blossoms as your favorite flowers. Please reload the page.");
+			checkCookie6();
+		});
+		
+		$("#unfavButton6").click(function()
+		{
+			console.log("CW6 deleted.");
+			alert("You have unfavorite Cherry Blossoms. Please reload the page.");
+			deleteCookie("imgFile");
+		});
+		
+		//removes an element.
+	 
+		function removeElement(elementId) 
+		{
+			// Removes an element from the document
+			var element = document.getElementById(elementId);
+			element.parentNode.removeChild(element);
+		}
+		
+		//replaces the favorite button with a star.
+		
+		if (document.cookie.split(';').filter(function(item) //for CW1 
+		{
+				return item.indexOf('imgFile=1.jpg') >= 0
+			}).length) 
+			{
+			var star = document.createElement("i");
+			star.setAttribute("class", "fa fa-star");
+			star.setAttribute("style","font-size:30px;color:yellow;");
+			removeElement("favButton1");
+			var divAdd = document.getElementById("favDiv1");
+			divAdd.appendChild(star);
+			}
+		
+		
+		else if (document.cookie.split(';').filter(function(item) //for CW2 
+		{
+				return item.indexOf('imgFile=2.jpg') >= 0
+			}).length) 
+			{
+			var star = document.createElement("i");
+			star.setAttribute("class", "fa fa-star");
+			star.setAttribute("style","font-size:30px;color:yellow;");
+			removeElement("favButton2");
+			var divAdd = document.getElementById("favDiv2");
+			divAdd.appendChild(star);
+			}
+			
+		else if (document.cookie.split(';').filter(function(item) //for CW3 
+		{
+				return item.indexOf('imgFile=3.jpg') >= 0
+			}).length) 
+			{
+			var star = document.createElement("i");
+			star.setAttribute("class", "fa fa-star");
+			star.setAttribute("style","font-size:30px;color:yellow;");
+			removeElement("favButton3");
+			var divAdd = document.getElementById("favDiv3");
+			divAdd.appendChild(star);
+			}
+			
+			
+		else if (document.cookie.split(';').filter(function(item) //for CW4 
+		{
+				return item.indexOf('imgFile=pic4.JPG') >= 0
+			}).length) 
+			{
+			var star = document.createElement("i");
+			star.setAttribute("class", "fa fa-star");
+			star.setAttribute("style","font-size:30px;color:yellow;");
+			removeElement("favButton4");
+			var divAdd = document.getElementById("favDiv4");
+			divAdd.appendChild(star);
+			}
+			
+		else if (document.cookie.split(';').filter(function(item) //for CW5 
+		{
+				return item.indexOf('imgFile=5.jpg') >= 0
+			}).length) 
+			{
+			var star = document.createElement("i");
+			star.setAttribute("class", "fa fa-star");
+			star.setAttribute("style","font-size:30px;color:yellow;");
+			removeElement("favButton5");
+			var divAdd = document.getElementById("favDiv5");
+			divAdd.appendChild(star);
+			}
+			
+		else if (document.cookie.split(';').filter(function(item) //for CW6
+		{
+				return item.indexOf('imgFile=6.jpg') >= 0
+			}).length) 
+			{
+			var star = document.createElement("i");
+			star.setAttribute("class", "fa fa-star");
+			star.setAttribute("style","font-size:30px;color:yellow;");
+			removeElement("favButton6");
+			var divAdd = document.getElementById("favDiv6");
+			divAdd.appendChild(star);
+			}
+			
+		//cookie functions
+		
+		function setCookie(cname,cvalue,exdays) 
+		{
+			var d = new Date();
+			d.setTime(d.getTime() + (exdays*24*60*60*1000));
+			var expires = "expires=" + d.toGMTString();
+			document.cookie = cname+"="+cvalue+"; "+expires + ";path=/;";
+		}
+		
+		
+		function getCookie(cname) 
+		{
+			var name = cname + "=";
+			var ca = document.cookie.split(';');
+			for(var i=0; i<ca.length; i++) 
+			{
+				var c = ca[i];
+				while (c.charAt(0)==' ') c = c.substring(1);
+				if (c.indexOf(name) == 0) 
+				{
+					return c.substring(name.length, c.length);
+				}
+			}
+			return "";
+		}
+		
+		//sets each cookie
+		function checkCookie1() 
+		{
+			var user=getCookie("imgFile");
+			if (user != "") 
+			{
+				console.log("you have a cookie already");
+			} 
+			else 
+			{
+			   user = "1.jpg";
+			   if (user != "" && user != null) 
+			   {
+				   setCookie("imgFile", user, 30);
+			   }
+			}
+		}
+		
+		function checkCookie2() 
+		{
+			var user=getCookie("imgFile");
+			if (user != "") 
+			{
+				console.log("you have a cookie already");
+			} 
+			else 
+			{
+			   user = "2.jpg";
+			   if (user != "" && user != null) 
+			   {
+				   setCookie("imgFile", user, 30);
+			   }
+			}
+		}
+		
+		function checkCookie3() 
+		{
+			var user=getCookie("imgFile");
+			if (user != "") 
+			{
+				console.log("you have a cookie already");
+			} 
+			else 
+			{
+			   user = "3.jpg";
+			   if (user != "" && user != null) 
+			   {
+				   setCookie("imgFile", user, 30);
+			   }
+			}
+		}
+		
+		function checkCookie4() 
+		{
+			var user=getCookie("imgFile");
+			if (user != "") 
+			{
+				console.log("you have a cookie already");
+			} 
+			else 
+			{
+			   user = "4.JPG";
+			   if (user != "" && user != null) 
+			   {
+				   setCookie("imgFile", user, 30);
+			   }
+			}
+		}
+		
+		function checkCookie5() 
+		{
+			var user=getCookie("imgFile");
+			if (user != "") 
+			{
+				console.log("you have a cookie already");
+			} 
+			else 
+			{
+			   user = "5.jpg";
+			   if (user != "" && user != null) 
+			   {
+				   setCookie("imgFile", user, 30);
+			   }
+			}
+		}
+		
+		function checkCookie6() 
+		{
+			var user=getCookie("imgFile");
+			if (user != "") 
+			{
+				console.log("you have a cookie already");
+			} 
+			else 
+			{
+			   user = "6.jpg";
+			   if (user != "" && user != null) 
+			   {
+				   setCookie("imgFile", user, 30);
+			   }
+			}
+		}
+		//deletes cookie
+		
+		function deleteCookie(cname) 
+		{
+			var d = new Date(); //Create an date object
+			d.setTime(d.getTime() - (1000*60*60*24)); //Set the time to the past. 1000 milliseonds = 1 second
+			var expires = "expires=" + d.toGMTString(); //Compose the expirartion date
+			window.document.cookie = cname+"="+"; "+expires + ";path=/;";//Set the cookie with name and the expiration date
+		 
+		}
+		
+	});
+</script>
+
+<div class="containMe"><div class="box">
+    <div class="captionCSS">
+        <h3>Dahlia</h3>
+    </div>
+    <div id="favDiv1">
+        <button id="favButton1">Make Favorite</button>
+    </div>
+    <div><button id="unfavButton1">Unfavorite</button></div>
+    <div class="divCSS"><a href="https://s3-us-west-2.amazonaws.com/cis311phase3/DescriptionPage.html?  img=https://s3-us-west-2.amazonaws.com/cis311phase3/pic1.jpg&amp;
+        title= Dahlia;
+        description=The Car Federation upsets order in the Galactic Car Republic by blockading the Yes Cerritos Auto Square in preparationfor a full-scale invasion. The Republic's leader, Supreme Carcellor Valoroom, dispatches Cardi Master Qui-Car Jinn, and hisapprentice, Obi-Wan Carobi, to negotiate with the Car Federation Carroy, Nute Carray. Darth Sidious, a Car Lord and theCar Federation's secret benefactor, orders the Carroy to kill the Cardi and begin their invasion with an army of battle cars."><img class="imgCSS" 
+        src="https://s3-us-west-2.amazonaws.com/cis311phase3/pic1.jpg">
+        </a>
+    </div>
+    </div>
+   
+    <div class="box">
+        <div class="captionCSS">
+            <h3>Shasta Daisies</h3>
+        </div>
+        <div id="favDiv2">
+            <button id="favButton2">Make Favorite</button>
+        </div><div><button id="unfavButton2">Unfavorite</button>
+        </div>
+        <div class="divCSS">
+            <a href="https://s3-us-west-2.amazonaws.com/cis311phase3/DescriptionPage2.html?
+                     img=https://s3-us-west-2.amazonaws.com/cis311phase3/pic2.jpg&amp;
+                     title=Shasta Daisies;
+                    description = Shasta daisies are characterized by a distinct odour which some find unpleasant
+			Shasta daisies tend to bloom in clumps from 2 to 3 feet tall and 1 to 2 feet wide. They bear all-white daisy petals, yellow disk florets, and contrasting glossy, dark green leaves. Like clockwork, shasta daisies return every spring or early summer and bloom until early fall. They are never invasive (like some consider roadside daisies to be) and they are terrific for cutting."> <img class="imgCSS" 
+                     src="https://s3-us-west-2.amazonaws.com/cis311phase3/pic2.jpg">
+            </a>
+        </div>
+    </div>
+    <div class="box">
+        <div class="captionCSS">
+            <h3>Orchids</h3>
+        </div><div id="favDiv3">
+        <button id="favButton3">Make Favorite</button>
+        </div><div>
+        <button id="unfavButton3">Unfavorite</button>
+        </div>
+        <div class="divCSS">
+            <a href="https://s3-us-west-2.amazonaws.com/cis311phase3/DescriptionPage3.html?
+                     img=https://s3-us-west-2.amazonaws.com/cis311phase3/pic3.jpg;
+                     title=Car Wars 3: Revenge of the Car&amp;
+                     description=Three years after the Battle of Honda, the industry is in a state of civil war. During a battle over I-15, Cardi masterObi-Wan Carobi and Cardi Knight Anakin Carwalker lead a mission to rescue the kidnapped Supreme Carncellor Palpatine from thecyborg Separatist carmmander, General Grievous. After infiltrating Grievous's car, the Invisible Hand, the Cardi battle Counting Car, whom Anakin eventually executes at Palpatine's urging.">
+                <img class="imgCSS" src="https://s3-us-west-2.amazonaws.com/cis311phase3/pic3.jpg">
+            </a>
+        </div>
+    </div>
+    <div class="box">
+        <div class="captionCSS">
+            <h3>Tulipshttps</h3>
+        </div><div id="favDiv4">
+        <button id="favButton4">Make Favorite</button>
+        </div>
+        <div>
+            <button id="unfavButton4">Unfavorite</button>
+        </div>
+        <div class="divCSS">
+            <a href="https://s3-us-west-2.amazonaws.com/cis311phase3/DescriptionPage4.html?
+                     img=https://s3-us-west-2.amazonaws.com/cis311phase3/pic4.jpg&amp;
+                    title=Car Wars 4: A New Car&amp;
+                     description=The industry is in the midst of a civil war. Car spies have stolen plans to the Galactic Car Empire's Death Star, a colossal car factorycapable of destroying an entire car company. Princess Leia, one of the Car's leaders, has the plans, but her car is captured by Imperial carsunder the command of the ruthless Darth Carder. Before she is captured, Leia hides the plans in the memory of an astrocar droid, R2-D2, alongwith a holographic recording. R2-D2 flees in an escape car to the desert road Route 66 with C-3PO, a protocar droid.">
+                <img class="imgCSS" src="https://s3-us-west-2.amazonaws.com/cis311phase3/pic4.jpg"></a></div></div><div class="box">
+  
+    
+    <div class="captionCSS">
+        <h3>Hibiscus</h3>
+    </div>
+    <div id="favDiv5"><button id="favButton5">Make Favorite</button>
+    </div>
+    <div><button id="unfavButton5">Unfavorite</button>
+    </div><div class="divCSS">
+    <a href="https://s3-us-west-2.amazonaws.com/cis311phase3/DescriptionPage5.html?
+             img=https://s3-us-west-2.amazonaws.com/cis311phase3/pic5.jpg&amp;
+             title=Car Wars 5: The Car Strikes Back&amp;
+             description=Three years after the destruction of the Death Star, the Car Alliance has been driven from their former base on Carvin IV by the Galactic Car Empire. The cars, led by Princess Leia, have set up a new base on the ice factory Anartica. The Imperial fleet, led by Darth Carder, continuesto hunt for the Car's new base by dispatching probe cars across the galaxy. Luke Carwalker is captured by a wampa while investigating one such car, but he manages to escape from the wampa's car with his carsaber. ">
+        <img class="imgCSS" src="https://s3-us-west-2.amazonaws.com/cis311phase3/pic5.jpg">
+    </a>
+    </div>
+    </div>
+    <div class="box"><div class="captionCSS">
+        <h3>Cherry Blossoms</h3>
+        </div>
+        <div id="favDiv6">
+            <button id="favButton6">Make Favorite</button>
+        </div>
+        <div>
+            <button id="unfavButton6">Unfavorite</button>
+        </div>
+        <div class="divCSS">
+            <a href="https://s3-us-west-2.amazonaws.com/cis311phase3/DescriptionPage6.html?
+                     img=https://s3-us-west-2.amazonaws.com/cis311phase3/pic6.jpg&amp;
+                     title=Cherry Blossoms&amp;
+                     description=Luke Carwalker initiates a plan to rescue Han Carolo from the crime lord Jabba the Car with the help of Princess Leia, Lando Carlrissian, Chewbaccar, C-3PO, and R2-D2. Leia infiltrates Jabba's monster truck on Route 66, disguised as a car hunter, with Chewbaccar as her prisoner. Leia releases Han from his carbonite maintenance, but she is captured and enslaved.">
+                <img class="imgCSS" 
+                     src="https://s3-us-west-2.amazonaws.com/cis311phase3/pic6.jpg">
+            </a>
+        </div>
+    </div>
+    </div>
+    </body>
+</html>
