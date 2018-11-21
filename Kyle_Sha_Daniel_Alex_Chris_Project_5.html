@@ -162,6 +162,7 @@
 			</div>
 		</div>
 	</div>
+
 	
 	<div id = "m1" class = "hidden">
 		<div class="modalHeader">
@@ -187,6 +188,7 @@
 		</div>
 	</div>
 	
+
 	<div id = "m3" class = "hidden">
 		<div class="modalHeader">
 			<h4 class="modal-title" id="exampleModalLabel">Limited Quantity!</h4>
@@ -247,22 +249,40 @@
 		var priceButton;
 		var modalButton;
 		
-		var largeDiv = document.createElement("div");
-		largeDiv.setAttribute("class", "containMe");
-		document.body.appendChild(largeDiv);
+
+		//var largeDiv = document.createElement("div");
+		//largeDiv.setAttribute("class", "containMe");
+		//document.body.appendChild(largeDiv);
 		
-	
+		var alertLocation = document.createElement("div");
+ 		alertLocation.setAttribute("class", "alertCW");
+ 		document.body.appendChild(alertLocation);
+
 		
 		for (var i = 0; i < images.length; i++)
 		{
+			
+   			var uniDiv = document.createElement("div"); //template were all divs goes to 
+   			uniDiv.setAttribute("class", "Pizza " + [i + 1]);
+   			document.body.appendChild(uniDiv);
+
+   			var sizeDiv = document.createElement("div"); //makes the sizes of the div 
+   			sizeDiv.setAttribute("class", "col-sm-6 col-md-3");
+   			uniDiv.appendChild(sizeDiv);
+
+ 			var thumbnailDiv = document.createElement("div"); // store all parts
+   			thumbnailDiv.setAttribute("class", "thumbnail");
+  	 		sizeDiv.appendChild(thumbnailDiv);
+
 			console.log("image " + i + " is " + images[i]);
 			url = images[i]; 
 			
 			var Captiones = Captions[i]; 
 			var urlOfDetailPage = "Kyle_Sha_Daniel_Alex_Chris_Detail_Page.html?" + "img=" + url + "&" + "captions=" + Captions[i] + "&" + "description=" + Description[i]; //Make this into an actual url when uploaded to amazon.
+
 			var divImage = document.createElement("div");
 			divImage.setAttribute("class", "divCSS");
-			
+
 			var imageInsert = document.createElement("img");
 			imageInsert.setAttribute("class", "imgCSS");
 			imageInsert.setAttribute("src", url); 
@@ -271,11 +291,14 @@
 			imgClick.setAttribute("href", urlOfDetailPage); 
 			imgClick.appendChild(imageInsert); 
 			divImage.appendChild(imgClick);  
-			
+			thumbnailDiv.appendChild(divImage);
+
 			var divCaption = document.createElement("div");
 			divCaption.setAttribute("class", "captionCSS");
 			var captionContent = "This is a " + Captions[i];
+			var descriptionContent = Description[i];
 			var node = document.createTextNode(captionContent);
+			var nodeDescription = document.createTextNode(descriptionContent);
 			
 		
 			
@@ -283,12 +306,20 @@
 			h3Caption.setAttribute("class", "bg-success text-white");
 			h3Caption.appendChild(node);
 			divCaption.appendChild(h3Caption);
+			thumbnailDiv.appendChild(divCaption);
+
+			var info = document.createElement("p"); //inserts description in thumbnailDiv		
+			info.appendChild(nodeDescription);
+			divCaption.appendChild(info);
+			thumbnailDiv.appendChild(divCaption);
+
+			//var uniDiv = document.createElement("div");
+			//uniDiv.setAttribute("class","box");
 			
-			var uniDiv = document.createElement("div");
-			uniDiv.setAttribute("class","box");
+
 			
-			
-			uniDiv.appendChild(divCaption);
+			//uniDiv.appendChild(divCaption);
+
 			
 			favButton = document.createElement("button");
 			favButton.setAttribute("id", "favButton" + idNum[i]);
@@ -300,7 +331,7 @@
 			var fav = "Make Favorite";
 			var node2 = document.createTextNode(fav);
 			favButton.appendChild(node2);
-			
+
 			unfavButton = document.createElement("button");
 			unfavButton.setAttribute("id", "unfavButton" + idNum[i]);
 			unfavButton.setAttribute("type", "button");
@@ -311,6 +342,28 @@
 			var unfav = "Unfavorite";
 			var node3 = document.createTextNode(unfav);
 			unfavButton.appendChild(node3);
+
+			priceButton = document.createElement("button");
+			priceButton.setAttribute("id", "priceButton" + idNum[i]);
+			priceButton.setAttribute("type", "button");
+			priceButton.setAttribute("class", "btn btn-secondary");
+			priceButton.setAttribute("data-container", "body");
+			priceButton.setAttribute("data-toggle", "popover");
+			priceButton.setAttribute("data-placement", "right");
+			priceButton.setAttribute("data-content", priceNum[i]);
+			var price = "Price";
+			var node4 = document.createTextNode(price);
+			priceButton.appendChild(node4);
+
+			modalButton = document.createElement("button");
+			modalButton.setAttribute("id","modalButton" + idNum[i]);
+			modalButton.setAttribute("type","button");
+			modalButton.setAttribute("class","btn btn-primary");
+			modalButton.setAttribute("data-toggle","modal");
+			modalButton.setAttribute("data-target","#exampleModal");
+			var modal = "Click Me!";
+			var node5 = document.createTextNode(modal);
+			modalButton.appendChild(node5);
 			
 			priceButton = document.createElement("button");
 			priceButton.setAttribute("id", "priceButton" + idNum[i]);
@@ -337,9 +390,21 @@
 			var favDiv = document.createElement("div");
 			favDiv.setAttribute("id", "favDiv" + idNum[i]);
 			favDiv.appendChild(favButton);
-			
+			thumbnailDiv.appendChild(favButton);
+
 			var unfavDiv = document.createElement("div");
 			unfavDiv.appendChild(unfavButton);
+			thumbnailDiv.appendChild(unfavButton);
+
+			var priceDiv = document.createElement("div");
+			priceDiv.setAttribute("id", "priceDiv");
+			priceDiv.appendChild(priceButton);
+			thumbnailDiv.appendChild(priceButton);
+			
+			var modalDiv = document.createElement("div");
+			modalDiv.setAttribute("id","modalDiv");
+			modalDiv.appendChild(modalButton);
+			thumbnailDiv.appendChild(modalButton);
 			
 			var priceDiv = document.createElement("div");
 			priceDiv.setAttribute("id", "priceDiv");
@@ -353,9 +418,11 @@
 			uniDiv.appendChild(unfavDiv);
 			uniDiv.appendChild(priceDiv);
 			uniDiv.appendChild(modalDiv);
-			uniDiv.appendChild(divImage); 
+
+			//uniDiv.appendChild(divImage); 
 			
-			largeDiv.appendChild(uniDiv);
+			//largeDiv.appendChild(uniDiv);
+
 			
 			
 			
@@ -365,11 +432,37 @@
 		$("#favButton1").click(function()//cheese
 			{
 				console.log("Cheese.");
-				alert("You have chosen Cheese as your favorite. Please reload the page.");
+
+				//favorite alert cheese
+				var alertDiv = document.createElement("div");
+                        	alertDiv.setAttribute("class", "alert alert-success alert-dismissible");
+				alertDiv.setAttribute("href", "#");
+				alertDiv.setAttribute("data-dismiss", "alert");
+				alertDiv.setAttribute("aria-label", "close");
+				var fav = document.createTextNode("You have chosen cheese pizza as your favorite. Please reload the page");
+				var para = document.createElement("p");
+				para.appendChild(fav);
+				alertDiv.appendChild(para);
+				alertLocation.appendChild(alertDiv);
+
 				checkCookie1();
 			});
 		$("#unfavButton1").click(function()
 		{
+			console.log("Cheese deleted.");
+
+			//unfavorite alert cheese
+			var alertDiv = document.createElement("div"); //alert
+            		alertDiv.setAttribute("class", "alert alert-danger alert-dismissible");
+			alertDiv.setAttribute("href", "#");
+			alertDiv.setAttribute("data-dismiss", "alert");
+			alertDiv.setAttribute("aria-label", "close");
+			var unfav = document.createTextNode("You have unfavorite cheese pizza. Please reload the page.");
+			var para = document.createElement("p");
+			para.appendChild(unfav);
+			alertDiv.appendChild(para);
+			alertLocation.appendChild(alertDiv);
+
 			deleteCookie("imgFile");
 		});
 			
@@ -378,11 +471,37 @@
 		$("#favButton2").click(function()//mushroom
 		{
 			console.log("mushroom.");
-			alert("You have chosen mushroom as your favorite. Please reload the page.");
+
+			//favorite alert CW2
+			var alertDiv = document.createElement("div");
+            		alertDiv.setAttribute("class", "alert alert-success alert-dismissible");
+			alertDiv.setAttribute("href", "#");
+			alertDiv.setAttribute("data-dismiss", "alert");
+			alertDiv.setAttribute("aria-label", "close");
+			var fav = document.createTextNode("You have chosen mushroom pizza as your favorite? Please reload the page.");
+			var para = document.createElement("p");
+			para.appendChild(fav);
+			alertDiv.appendChild(para);
+			alertLocation.appendChild(alertDiv);
+			
 			checkCookie2();
 		});
 		$("#unfavButton2").click(function()
 		{
+			console.log("mushroom deleted.");
+
+			//unfavorite alert CW2
+			var alertDiv = document.createElement("div"); //alert
+            		alertDiv.setAttribute("class", "alert alert-danger alert-dismissible");
+			alertDiv.setAttribute("href", "#");
+			alertDiv.setAttribute("data-dismiss", "alert");
+			alertDiv.setAttribute("aria-label", "close");
+			var unfav = document.createTextNode("You have unfavorite mushroom pizza. Please reload the page.");
+			var para = document.createElement("p");
+			para.appendChild(unfav);
+			alertDiv.appendChild(para);
+			alertLocation.appendChild(alertDiv);
+
 			deleteCookie("imgFile");
 		});
 		
@@ -392,11 +511,37 @@
 		$("#favButton3").click(function()//pineapple
 		{
 			console.log("pineapple.");
-			alert("You have chosen pineapple. Please reload the page.");
+
+			//favorite alert CW3
+			var alertDiv = document.createElement("div");
+                        alertDiv.setAttribute("class", "alert alert-success alert-dismissible");
+			alertDiv.setAttribute("href", "#");
+			alertDiv.setAttribute("data-dismiss", "alert");
+			alertDiv.setAttribute("aria-label", "close");
+			var fav = document.createTextNode("You have chosen pineapple pizza as your favorite? Please reload the page.");
+			var para = document.createElement("p");
+			para.appendChild(fav);
+			alertDiv.appendChild(para);
+			alertLocation.appendChild(alertDiv);
+
 			checkCookie3();
 		});
 		$("#unfavButton3").click(function()
 		{
+			console.log("pineapple deleted.");
+
+			//unfavorite alert CW3
+			var alertDiv = document.createElement("div"); //alert
+                        alertDiv.setAttribute("class", "alert alert-danger alert-dismissible");
+			alertDiv.setAttribute("href", "#");
+			alertDiv.setAttribute("data-dismiss", "alert");
+			alertDiv.setAttribute("aria-label", "close");
+			var unfav = document.createTextNode("You have unfavorite pineapple pizza. Please reload the page.");
+			var para = document.createElement("p");
+			para.appendChild(unfav);
+			alertDiv.appendChild(para);
+			alertLocation.appendChild(alertDiv);
+
 			deleteCookie("imgFile");
 		});
 		
@@ -405,11 +550,37 @@
 		$("#favButton4").click(function()//sausage
 		{
 			console.log("sausage.");
-			alert("You have chosen sausage. Please reload the page.");
+
+			//favorite alert CW4
+			var alertDiv = document.createElement("div");
+                        alertDiv.setAttribute("class", "alert alert-success alert-dismissible");
+			alertDiv.setAttribute("href", "#");
+			alertDiv.setAttribute("data-dismiss", "alert");
+			alertDiv.setAttribute("aria-label", "close");
+			var fav = document.createTextNode("You have chosen sausage pizza as your favorite. Please reload the page.");
+			var para = document.createElement("p");
+			para.appendChild(fav);
+			alertDiv.appendChild(para);
+			alertLocation.appendChild(alertDiv);
+
 			checkCookie4();
 		});
 		$("#unfavButton4").click(function()
 		{
+			console.log("sausage deleted.");
+
+			//unfavorite alert CW4
+			var alertDiv = document.createElement("div"); //alert
+                        alertDiv.setAttribute("class", "alert alert-danger alert-dismissible");
+			alertDiv.setAttribute("href", "#");
+			alertDiv.setAttribute("data-dismiss", "alert");
+			alertDiv.setAttribute("aria-label", "close");
+			var unfav = document.createTextNode("You have unfavorite sausage pizza. Please reload the page.");
+			var para = document.createElement("p");
+			para.appendChild(unfav);
+			alertDiv.appendChild(para);
+			alertLocation.appendChild(alertDiv);
+
 			deleteCookie("imgFile");
 		});
 		
@@ -417,11 +588,37 @@
 		$("#favButton5").click(function()//chocolate
 		{
 			console.log("chocolate.");
-			alert("You have chose chocolate. Please reload the page.");
+
+			//favorite alert CW5
+			var alertDiv = document.createElement("div");
+                        alertDiv.setAttribute("class", "alert alert-success alert-dismissible");
+			alertDiv.setAttribute("href", "#");
+			alertDiv.setAttribute("data-dismiss", "alert");
+			alertDiv.setAttribute("aria-label", "close");
+			var fav = document.createTextNode("You have chosen chocolate pizza as your favorite. Please reload the page.");
+			var para = document.createElement("p");
+			para.appendChild(fav);
+			alertDiv.appendChild(para);
+			alertLocation.appendChild(alertDiv);
+
 			checkCookie5();
 		});
 		$("#unfavButton5").click(function()
 		{
+			console.log("chocolate deleted.");
+
+			//unfavorite alert CW5
+			var alertDiv = document.createElement("div"); //alert
+                        alertDiv.setAttribute("class", "alert alert-danger alert-dismissible");
+			alertDiv.setAttribute("href", "#");
+			alertDiv.setAttribute("data-dismiss", "alert");
+			alertDiv.setAttribute("aria-label", "close");
+			var unfav = document.createTextNode("You have unfavorite chocolate pizza. Please reload the page.");
+			var para = document.createElement("p");
+			para.appendChild(unfav);
+			alertDiv.appendChild(para);
+			alertLocation.appendChild(alertDiv);
+
 			deleteCookie("imgFile");
 		});
 		
