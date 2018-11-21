@@ -162,6 +162,7 @@
 			</div>
 		</div>
 	</div>
+
 	
 	<div id = "m1" class = "hidden">
 		<div class="modalHeader">
@@ -187,6 +188,7 @@
 		</div>
 	</div>
 	
+
 	<div id = "m3" class = "hidden">
 		<div class="modalHeader">
 			<h4 class="modal-title" id="exampleModalLabel">Limited Quantity!</h4>
@@ -247,6 +249,7 @@
 		var priceButton;
 		var modalButton;
 		
+
 		//var largeDiv = document.createElement("div");
 		//largeDiv.setAttribute("class", "containMe");
 		//document.body.appendChild(largeDiv);
@@ -254,6 +257,7 @@
 		var alertLocation = document.createElement("div");
  		alertLocation.setAttribute("class", "alertCW");
  		document.body.appendChild(alertLocation);
+
 		
 		for (var i = 0; i < images.length; i++)
 		{
@@ -275,7 +279,7 @@
 			
 			var Captiones = Captions[i]; 
 			var urlOfDetailPage = "Kyle_Sha_Daniel_Alex_Chris_Detail_Page.html?" + "img=" + url + "&" + "captions=" + Captions[i] + "&" + "description=" + Description[i]; //Make this into an actual url when uploaded to amazon.
-			
+
 			var divImage = document.createElement("div");
 			divImage.setAttribute("class", "divCSS");
 
@@ -312,8 +316,10 @@
 			//var uniDiv = document.createElement("div");
 			//uniDiv.setAttribute("class","box");
 			
+
 			
 			//uniDiv.appendChild(divCaption);
+
 			
 			favButton = document.createElement("button");
 			favButton.setAttribute("id", "favButton" + idNum[i]);
@@ -359,6 +365,28 @@
 			var node5 = document.createTextNode(modal);
 			modalButton.appendChild(node5);
 			
+			priceButton = document.createElement("button");
+			priceButton.setAttribute("id", "priceButton" + idNum[i]);
+			priceButton.setAttribute("type", "button");
+			priceButton.setAttribute("class", "btn btn-secondary");
+			priceButton.setAttribute("data-container", "body");
+			priceButton.setAttribute("data-toggle", "popover");
+			priceButton.setAttribute("data-placement", "right");
+			priceButton.setAttribute("data-content", priceNum[i]);
+			var price = "Price";
+			var node4 = document.createTextNode(price);
+			priceButton.appendChild(node4);
+			
+			modalButton = document.createElement("button");
+			modalButton.setAttribute("id","modalButton" + idNum[i]);
+			modalButton.setAttribute("type","button");
+			modalButton.setAttribute("class","btn btn-primary");
+			modalButton.setAttribute("data-toggle","modal");
+			modalButton.setAttribute("data-target","#exampleModal");
+			var modal = "Click Me!";
+			var node5 = document.createTextNode(modal);
+			modalButton.appendChild(node5);
+			
 			var favDiv = document.createElement("div");
 			favDiv.setAttribute("id", "favDiv" + idNum[i]);
 			favDiv.appendChild(favButton);
@@ -378,13 +406,23 @@
 			modalDiv.appendChild(modalButton);
 			thumbnailDiv.appendChild(modalButton);
 			
+			var priceDiv = document.createElement("div");
+			priceDiv.setAttribute("id", "priceDiv");
+			priceDiv.appendChild(priceButton);
+			
+			var modalDiv = document.createElement("div");
+			modalDiv.setAttribute("id","modalDiv");
+			modalDiv.appendChild(modalButton);
+			
 			uniDiv.appendChild(favDiv);
 			uniDiv.appendChild(unfavDiv);
 			uniDiv.appendChild(priceDiv);
 			uniDiv.appendChild(modalDiv);
+
 			//uniDiv.appendChild(divImage); 
 			
 			//largeDiv.appendChild(uniDiv);
+
 			
 			
 			
