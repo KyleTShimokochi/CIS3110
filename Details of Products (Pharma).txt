@@ -27,26 +27,6 @@ details (advil) : Whether you have occasional muscles aches, backaches, minor ar
 
 The pain reliever in Advil is ibuprofen, a non-steroidal anti-inflammatory drug (NSAID) that when taken as directed is a safe and effective pain reliever and fever reducer.
 
-(1) Among OTC Pain Relievers.
-
-(2) Based on a Survey of Doctors.
-
-(3) Based on a Survey of ER Doctors.
-
-Includes ten Advil coated ibuprofen tablets, temporary pain relief. Make pain a distant memory with Advil ibuprofen, the #1 selling pain reliever (among over the counter pain relievers), providing safe, effective pain relief for over 30 years.
-
-So whether you have a headache, muscle aches, backaches, menstrual pain, minor arthritis and other joint pain, or aches and pains from the common cold, nothing's stronger or longer lasting.(1) The medicine in Advil is #1 doctor recommended for pain relief.(2).
-
-Advil coated ibuprofen tablets temporarily relieve minor aches and pains due to: headache, toothache, backache, menstrual cramps, the common cold, muscular aches, and minor pain of arthritis. Advil coated ibuprofen tablets temporarily reduce fever as well.
-
-Millions have trusted Advil to safely and effectively relieve their aches and pains for over 30 years. Stops pain at the site of inflammation for relief where you need it. The medicine in Advil is what ER doctors use to treat their own aches and pains.
-
-Relieve your worst allergy symptoms, indoors and out
-Contains 10 mg of cetirizine HCL per tablet
-24-hour relief of runny nose, sneezing, itchy, watery eyes and itchy nose and throat
-#1 allergist-recommended brand among OTC oral antihistamines
-Starts working at hour 1 and keeps on working for a full 24 hours
-
 directions: Advil Ibuprofen Tablets Pain Reliever/Fever Reducer 200mg Coated Tablets, 10/Pack
 Read and keep carton for complete warnings and information.
 
@@ -66,22 +46,14 @@ Robitussin: cough syrup
 https://www.robitussin.com/products/maximum-strength-honeycough-chest-congestion-dm
 https://drugfree.org/drug/dxm/?utm_source=google&utm_medium=kp&utm_campaign=dxm
 
-description: Robitussin knows it s never just a cough when you re coughing, you may be sick. Put your cold to bed and get fast, effective cough relief with Robitussin Adult Maximum Strength Nighttime Cough DM Max. With its fresh blue raspberry taste and strong soothing action, this max-strength cold medicine controls the cough impulse to help you sleep. Robitussin maximum strength cough syrup is also formulated to help relieve your worst cold symptoms, including itchy throat, runny nose and sneezing. Robitussin nighttime cough medicine is formulated for adults and children ages 12 and over review all labeled directions and warnings prior to use. For daytime relief, reach for Robitussin Maximum Strength Cough and Chest Congestion DM, available in a liquid or liquid-filled capsules.
-directions: 20mL every 6 hours. Only for children and adults over the age of 12. Do not allow children under the age of 12 to take this substance. no more than 4 doses in any 24-hour period.
+description: Robitussin knows it s never just a cough when you re coughing, you may be sick. Put your cold to bed and get fast, effective cough relief with Robitussin Adult Maximum Strength Nighttime Cough DM Max. With its fresh blue raspberry taste and strong soothing action, this max-strength cold medicine controls the cough impulse to help you sleep. Robitussin maximum strength cough syrup is also formulated to help relieve your worst cold symptoms, including itchy throat, runny nose and sneezing. 
 
 nyquil cold and flu: flu meds
 https://vicks.com/en-us/shop-products/nyquil/nyquil-severe-cold-flu-liquid
 https://www.drugs.com/mtm/nyquil-cold-flu.html
 
-description: ZzzQuil, a non habit-forming nighttime sleep aid for when you just need a good night's sleep. From the makers of Vicks NyQuil.
+description: ZzzQuil, a non habit-forming nighttime sleep aid for when you just need a good night's sleep. From the makers of Vicks NyQuil. just for sleep.
 
-For the relief of occasional sleeplessness.
-Reduces time to fall asleep if you have difficulty falling asleep.
-Not for colds.
-Not for pain.
-Just for sleep.
-Sleep soundly so you can wake refreshed.
-Not for treating cold or flu.
 directions: Take only one dose per day (24 hours), use dose cup or tablespoon. Adults and children 12 years and over: 30mL (2 tablespoons) at bedtime if needed or as directed by a doctor. Children under 12 years: Do not use.
 
 
